@@ -9,13 +9,13 @@
 <body>
   <header class="navbar">
     <h3>AG BANK</h3>
-    <button class="menu-btn">☰</button>
+    <button class="menu-btn" aria-label="menu">☰</button>
   </header>
 
   <main class="calculator-wrapper">
     <section class="calculator">
-      <!-- LEFT SECTION -->
-      <div class="left-panel">
+      <!-- LEFT: form fields stacked -->
+      <div class="form-column">
         <h1>Get started with Digital Credit Experience</h1>
         <p class="subtitle">Qualify or apply your mortgage in minutes</p>
 
@@ -25,36 +25,33 @@
           <div class="value-line">
             <span>$</span><input type="number" id="purchasePrice" value="250000" />
           </div>
-          <input type="range" min="50000" max="2500000" value="250000" step="5000" />
+          <input type="range" id="purchasePriceRange" min="50000" max="2500000" value="250000" step="5000" />
           <div class="range-labels">
             <span>$50,000</span><span>$2.5 million</span>
           </div>
         </div>
 
         <!-- Down Payment -->
-        <!-- Down Payment -->
         <div class="input-block">
-            <label for="downPayment">Down payment</label>
-        <div class="value-line">
+          <label for="downPayment">Down payment</label>
+          <div class="value-line">
             <span>$</span><input type="number" id="downPayment" value="50000" />
-        </div>
-        <input type="range" id="downPaymentRange" min="0" max="1000000" value="50000" step="5000" />
-        <div class="range-labels">
+          </div>
+          <input type="range" id="downPaymentRange" min="0" max="1000000" value="50000" step="5000" />
+          <div class="range-labels">
             <span>$0</span><span>$1 million</span>
+          </div>
+          <p class="hint">4% or more of purchase price</p>
         </div>
-             <p class="hint">4% or more of purchase price</p>
-        </div>
 
-
-
-        <!-- Period and Zip -->
+        <!-- Period and Zip (stacked under the inputs) -->
         <div class="form-row">
           <div class="term-group">
             <label>Period</label>
             <div class="radio-group">
-              <label><input type="radio" name="period" /> 5/1 ARM variable</label>
-              <label><input type="radio" name="period" /> 15 year fixed</label>
-              <label><input type="radio" name="period" checked /> 30 year fixed</label>
+              <label><input type="radio" name="period" value="5/1" /> <span>5/1 ARM variable</span></label>
+              <label><input type="radio" name="period" value="15" /> <span>15 year fixed</span></label>
+              <label><input type="radio" name="period" value="30" checked /> <span>30 year fixed</span></label>
             </div>
           </div>
 
@@ -65,19 +62,33 @@
         </div>
       </div>
 
-      <!-- RIGHT SECTION -->
-      <div class="right-panel">
-        <h3>Your total payment will be</h3>
-        <p class="payment">$<span>780</span></p>
-        <div class="info">
-          <div><span>Rate</span><span>5.250%</span></div>
-          <div><span>APR</span><span>4.418%</span></div>
-          <div><span>Points</span><span>0.325</span></div>
+     <!-- RIGHT: result card in its own box aligned to the same container -->
+<div class="result-card">
+  <h3>Your total payment will be</h3>
+  <p class="payment">$<span>780</span></p>
+
+  <div class="info">
+    <div class="info-item">
+      <span class="label">Rate</span>
+      <span class="value">5.250%</span>
+    </div>
+    <div class="info-item">
+      <span class="label">APR</span>
+      <span class="value">4.418%</span>
+    </div>
+    <div class="info-item">
+      <span class="label">Points</span>
+      <span class="value">0.325</span>
+    </div>
+  </div>
+
+  <button class="cta-btn">Get started</button>
+</div>
+
         </div>
-        <button class="cta-btn">Get started</button>
-      </div>
     </section>
   </main>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
